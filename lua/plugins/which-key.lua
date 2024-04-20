@@ -77,14 +77,19 @@ return {
     }
 
     local keymaps = {
+      -- [";"] = "comment line",
+      -- [":"] = "comment block",
+      -- ["/"] = "comment visual block",
+      -- ["]"] = { name = "+next" },
+      -- ["["] = { name = "+prev" },
       ["<leader>"] = {
         ["?"] = "which-key root",
         ["<space>"] = "toggle relative line numbers",
-        [";"] = "comment line",
-        [":"] = "comment block",
-        ["/"] = "comment visual block",
+        ["b"] = { name = "+buffer" },
         ["c"] = { name = "+code", },
-        ["l"] = { name = "+lsp", },
+        ["f"] = { name = "+file/find" },
+        ["g"] = { name = "+git" },
+        ["s"] = { name = "+search", },
         ["e"] = { ":Neotree filesystem reveal left<CR>", "Neotree toggle" },
       },
     }
