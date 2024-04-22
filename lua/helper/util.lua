@@ -8,8 +8,4 @@ M.Map = function (mode, hls, rhs, opts)
     vim.keymap.set(mode, hls, rhs, options)
 end
 
-M.WhichKeyOpts = function (desc)
-    return vim.tbl_extend("force", { noremap = true, silent = true }, { desc = desc })
-end
-
 return M
