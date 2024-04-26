@@ -91,7 +91,6 @@ return {
         ["f"] = { name = "+file/find" },
         ["g"] = { name = "+git" },
         ["s"] = { name = "+search" },
-        ["v"] = { name = "+Venv" },
       },
     }
 
