@@ -22,8 +22,8 @@ return {
     map("n", "<leader>fr", builtin.oldfiles, { desc = "Recent" })
     map("n", "<leader>fm", "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", { desc = "Media" })
     -- git
-    map("n", "<leader>gc", builtin.git_commits, { desc = "Commits" })
-    map("n", "<leader>gs", builtin.git_status, { desc = "Status" })
+    -- map("n", "<leader>gc", builtin.git_commits, { desc = "Commits" })
+    -- map("n", "<leader>gs", builtin.git_status, { desc = "Status" })
     -- search
     map("n", '<leader>s"', builtin.registers, { desc = "Registers" })
     map("n", "<leader>sa", builtin.autocommands, { desc = "Auto Commands" })
