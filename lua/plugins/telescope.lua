@@ -15,7 +15,7 @@ return {
     local actions = require("telescope.actions")
     local map = require("helper.util").Map
     -- find
-    map("n", "<leader>fb", ":Telescope file_browser<CR>", { desc = "File Browswer" })
+    map("n", "<leader>fB", ":Telescope file_browser<CR>", { desc = "File Browswer" })
     map("n", "<leader>ff", builtin.find_files, { desc = "Find Files (Root Dir)" })
     map("n", "<leader>fh", builtin.help_tags, { desc = "Help Tags" })
     map("n", "<leader>fg", builtin.live_grep, { desc = "Live Grep" })

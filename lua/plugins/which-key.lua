@@ -28,12 +28,14 @@ return {
       ["<leader>"] = {
         ["?"] = "which-key root",
         ["<space>"] = "toggle relative line numbers",
-        ["b"] = { name = "Buffers" },
+        ["b"] = { name = "Debugging" },
         ["c"] = { name = "Code" },
         ["f"] = { name = "Find" },
+        ["d"] = { name = "Delete/Close" },
         ["g"] = { name = "Git" },
         ["s"] = { name = "Search" },
         ["t"] = { name = "Terminal" },
+        ["u"] = { name = "UI" },
       },
     }
 
