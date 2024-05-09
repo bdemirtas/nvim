@@ -26,6 +26,7 @@ return {
         lsp_zero.default_keymaps({
           buffer = bufnr,
           preserve_mappings = false,
+          vim.keymap.set('n', 'gR', '<cmd>lua vim.lsp.buf.rename()<cr>', { buffer = bufnr })
         })
       end)
 

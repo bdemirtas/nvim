@@ -9,6 +9,7 @@ return {
     },
     "nvim-telescope/telescope-file-browser.nvim",
     "nvim-telescope/telescope-media-files.nvim",
+    "andrew-george/telescope-themes",
   },
   config = function()
     local builtin = require("telescope.builtin")
@@ -39,6 +40,7 @@ return {
     map("n", "<leader>sm", builtin.marks, { desc = "Jump to Mark" })
     map("n", "<leader>so", builtin.vim_options, { desc = "Options" })
     map("n", "<leader>sR", builtin.resume, { desc = "Resume" })
+    map("n", "<leader>st", ":Telescope themes<CR>", { desc = "Theme Switcher" })
     local telescope = require("telescope")
     telescope.setup({
       defaults = {
@@ -66,5 +68,6 @@ return {
     telescope.load_extension('fzf')
     telescope.load_extension('file_browser')
     telescope.load_extension('media_files')
+    telescope.load_extension("themes")
   end,
 }
