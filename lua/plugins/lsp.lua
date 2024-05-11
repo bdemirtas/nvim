@@ -19,6 +19,7 @@ return {
       { "williamboman/mason-lspconfig.nvim" },
     },
     config = function()
+      local lspconfig = require("lspconfig")
       local lsp_zero = require("lsp-zero")
       lsp_zero.extend_lspconfig()
 
@@ -37,6 +38,18 @@ return {
           -- it applies to every language server without a "custom handler"
           function(server_name)
             require("lspconfig")[server_name].setup({})
+          end,
+
+          pyright = function()
+            lspconfig.pyright.setup({
+              settings = {
+                python = {
+                  analysis = {
+                    typeCheckingMode = "off"
+                  }
+                }
+              }
+            })
           end,
 
           -- this is the "custom handler" for `lua_ls`
