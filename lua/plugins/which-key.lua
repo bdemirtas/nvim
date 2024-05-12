@@ -23,11 +23,10 @@ return {
     }
 
     local keymaps = {
-      ["<c-n>"] = { ":Neotree filesystem reveal left<CR>", "Neotree toggle" },
-
       ["<leader>"] = {
         ["?"] = "which-key root",
         ["<space>"] = "toggle relative line numbers",
+        ["e"] = { ":Neotree filesystem reveal left<CR>", "Neotree toggle" },
         ["b"] = { name = "Debugging" },
         ["c"] = { name = "Code" },
         ["f"] = { name = "Find" },

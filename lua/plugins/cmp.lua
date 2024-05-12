@@ -9,7 +9,6 @@ return {
     "hrsh7th/cmp-buffer",
     "saadparwaiz1/cmp_luasnip",
     "lukas-reineke/cmp-under-comparator",
-
     -- Snippets
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
@@ -30,9 +29,9 @@ return {
       formatting = {
         fields = { "abbr", "kind", "menu" },
         format = require("lspkind").cmp_format({
-          mode = "text_symbol",    -- show only symbol annotations
-          maxwidth = 50,           -- prevent the popup from showing more than provided characters
-          ellipsis_char = "...",   -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
+          mode = "text_symbol",  -- show only symbol annotations
+          maxwidth = 50,         -- prevent the popup from showing more than provided characters
+          ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
         }),
       },
       sources = {
@@ -52,8 +51,8 @@ return {
         },
       },
       mapping = cmp.mapping.preset.insert({
-        ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-        ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+        ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+        ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
         ["<C-f>"] = cmp_action.luasnip_jump_forward(),
         ["<C-b>"] = cmp_action.luasnip_jump_backward(),
         ["<C-Space>"] = cmp.mapping.complete(),

@@ -30,7 +30,7 @@ return
     config = function()
       require('neogit').setup({
         vim.keymap.set("n", "<leader>gs", "<cmd>Neogit<CR>", { desc = "Status" }),
-        vim.keymap.set("n", "<leader>gc", "<cmd>Neogit commit<CR>", { desc = "Commit" }),
+        -- vim.keymap.set("n", "<leader>gc", "<cmd>Neogit commit<CR>", { desc = "Commit" }),
       })
     end
   }
