@@ -1,0 +1,25 @@
+return {
+  "nvim-treesitter/nvim-treesitter",
+  opts = {
+    ensure_installed = {
+      "json",
+      "luadoc",
+      "bash",
+      "git_config",
+      "csv",
+      "vim",
+      "python",
+      "toml",
+      "lua",
+      "gitignore",
+      "gitcommit",
+      "git_rebase",
+      "yaml",
+      "sql",
+      "markdown",
+      "markdown_inline",
+      "regex",
+      "norg",
+    },
+  },
+}

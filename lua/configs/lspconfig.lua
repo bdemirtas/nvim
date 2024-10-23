@@ -1,5 +1,6 @@
 local M = {}
 local map = vim.keymap.set
+local lspconfig = require("lspconfig")
 
 -- export on_attach & capabilities
 M.on_attach = function(_, bufnr)
@@ -19,7 +20,7 @@ M.on_attach = function(_, bufnr)
   end, opts "List workspace folders")
 
   map("n", "<leader>D", vim.lsp.buf.type_definition, opts "Go to type definition")
-  map("n", "<leader>ra", require "nvchad.lsp.renamer", opts "NvRenamer")
+  map("n", "gR", require "nvchad.lsp.renamer", opts "NvRenamer")
 
   map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code action")
   map("n", "gr", vim.lsp.buf.references, opts "Show references")
@@ -52,17 +53,32 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
+lspconfig.azure_pipelines_ls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  on_init = M.on_init,
+  root_dir = lspconfig.util.root_pattern("azure-pipelines.y*l"),
+  single_file_support = true,
+  settings = {},
+}
+
+lspconfig.bashls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  on_init = M.on_init,
+}
+
 M.defaults = function()
   dofile(vim.g.base46_cache .. "lsp")
   require("nvchad.lsp").diagnostic_config()
 
-  require("lspconfig").ruff.setup {
+  lspconfig.ruff.setup {
     on_attach = M.on_attach,
     capabilities = M.capabilities,
     on_init = M.on_init,
   }
 
-  require("lspconfig").pyright.setup {
+  lspconfig.pyright.setup {
     on_attach = M.on_attach,
     capabilities = M.capabilities,
     on_init = M.on_init,
@@ -85,7 +101,7 @@ M.defaults = function()
       },
     },
   }
-  require("lspconfig").lua_ls.setup {
+  lspconfig.lua_ls.setup {
     on_attach = M.on_attach,
     capabilities = M.capabilities,
     on_init = M.on_init,

@@ -2,6 +2,8 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
+vim.keymap.del("n", "<C-c>")
+
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
@@ -35,3 +37,12 @@ function PreserveAndRunMacro(register)
   vim.cmd("normal! @" .. register)
   vim.fn.setreg('"', saved_register)
 end
+
+local groups = {
+  c = { name = "🧔 [c]had" },
+  f = { name = "🔍 [f]ind" },
+  m = { name = "🔖 [m]arks"},
+  g = { name = "󰊢, [g]it"},
+}
+
+require("which-key").register(groups, {prefix = "<leader>"})

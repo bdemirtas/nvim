@@ -3,7 +3,7 @@ dofile(vim.g.base46_cache .. "nvimtree")
 return {
   filters = {
     dotfiles = false,
-    custom = { ".git", "node_modules", "\\.cache", "__pycache__", "**/__pycache__" },
+    custom = { "node_modules", "\\.cache", "__pycache__", "**/__pycache__" },
   },
   disable_netrw = true,
   hijack_cursor = true,

@@ -1,6 +1,7 @@
 return {
   {
     "fredeeb/tardis.nvim",
+    lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     config = true,
     keys = {
@@ -9,6 +10,7 @@ return {
   },
   {
     "lewis6991/gitsigns.nvim",
+    lazy = false,
     config = function()
       require("gitsigns").setup {
         on_attach = function(bufnr)
@@ -59,6 +61,7 @@ return {
   },
   {
     "NeogitOrg/neogit",
+    lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",
